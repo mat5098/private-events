@@ -1,0 +1,7 @@
+<h1>Events:</h1>
+<% @events.each do |event| %>
+<b><%= link_to event.title, event %></b><br>
+<%= event.description %><br>
+<%= event.location %><br>
+<%= event.date.strftime("%d/%m/%Y") %><br>
+<% end %>

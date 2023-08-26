@@ -1,0 +1,10 @@
+<h1>Users:</h1>
+<% u = @user %>
+<h2>Events by: <%= u.user_name %></h2>
+<ul>
+<% event_count = 1 %>
+<% u.events.each do |event| %>
+<li> <%= event_count %>, <%= event.title %></li>
+<% event_count +=1 %>
+<% end %>
+</ul>

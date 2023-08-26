@@ -1,0 +1,7 @@
+<% e = @event %>
+<h3><%= e.title %></h3>
+<%= e.description %><br>
+<%= e.location %><br>
+<%= e.date.strftime("%d/%m/%Y") %><br>
+<%= e.creator %><br>
+<%= link_to "Home page", root_path %>
