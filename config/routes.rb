@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
    resources :events
    resources :users, only: [:show]
+   resources :admissions, only: [:new]   
+   resources :invites, only: [:new, :create]
 
 end

@@ -4,4 +4,19 @@
 <%= e.location %><br>
 <%= e.date.strftime("%d/%m/%Y") %><br>
 <%= e.creator %><br>
+
+<h3>Attendees for this Happening:</h3>
+<ul><% e.attendees.each do |a| %></ul>
+    <li><%= link_to a.user_name, a %></li>
+    <% end %>
+          <% if user_signed_in? %>
+      <div class="link-btn attend-btn"><%= link_to "Attend Happening", new_admission_path(:event_id => e.id) %></div>
+      <% end %>
+      
+<h3>Invite members to your happening:</h3>
+<%= form_with url: invites_path do |i| %>
+<%= i.collection_select :user_id, User.order(:user_name), :id, :user_name %>
+<%= i.submit "Invite member", class: "link-btn" %>
+<% end %>
+    
 <%= link_to "Home page", root_path %>
