@@ -6,4 +6,7 @@ class Event < ApplicationRecord
 
     has_many :invites
     has_many :invitees, through: :invites
+
+    scope :past, -> { where("date < ?", Time.now)}
+    scope :future, -> { where("date > ?", Time.now)}
 end

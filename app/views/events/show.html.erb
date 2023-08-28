@@ -3,8 +3,7 @@
 <%= e.description %><br>
 <%= e.location %><br>
 <%= e.date.strftime("%d/%m/%Y") %><br>
-<%= e.creator %><br>
-
+<%= link_to e.creator.user_name, e.creator %>
 <h3>Attendees for this Happening:</h3>
 <ul><% e.attendees.each do |a| %></ul>
     <li><%= link_to a.user_name, a %></li>
